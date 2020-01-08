@@ -14,7 +14,7 @@ Doing a view-source on page displays the location of source code `src.zip`.
 
 ### Phar deserialization
 
-In fetchImage.php Line 123, we have this like
+In fetchImage.php Line 123, we have
 ```
 images[] = [
             'Src' => absoluteSource($element->src, $url), // <img [src]> 
@@ -29,7 +29,7 @@ foreach ($images as $imageInfo) {
 }
 ```
 
-* So if we host a page on some server http://1.2.3.4/page.html, this code will look for all images in the page and do a getimagesize on it.
+* So if we host a page on some server http://YOUR_SERVER/page.html, this code will look for all images in the page and do a getimagesize on it.
 * So a image src like `<img src='phar://../file'>` will take src `phar://../file` and `getimagesize('phar://../file')`. So that gets phar deserialization.
 
 

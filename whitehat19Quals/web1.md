@@ -11,13 +11,13 @@
 ### LFI
 
 * http://15.165.80.50/?page=register was the register page
-* http://15.165.80.50/?page=/./etc/passwd split the passwd file, thus LFI confirmed
+* http://15.165.80.50/?page=/./etc/passwd spit the passwd file, thus LFI confirmed
 
 ![web01.2](images/1.2.png)
 
 Now we just need a file with our controlled content and include it to execute php.
 
-Usually username identity is sessions. Server uses session to identify the user and this session is maintained by server in a session file which is located at /var/lib/php/sessions/sess_PHPSESSID
+Server uses session to identify the user and this session is maintained by server in a session file located at /var/lib/php/sessions/sess_PHPSESSID
 
 So when we log in with the following username, our username will be stored in `/var/lib/php/sessions/sess_PHPSESSID` and thus we can include it to execute arbritrary php
 ```
