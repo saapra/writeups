@@ -25,7 +25,9 @@ Cache-Control: max-age=0
 
 ## Exploit
 
-Download the Exploit script at `https://github.com/mpgn/Rails-doubletap-RCE` and run on the server to get the flag.
+* Download the Exploit script at `https://github.com/mpgn/Rails-doubletap-RCE` and run on the server to get a reverse shell.
+* The shell we get is of user trex. /bin/bash is SUID binary owned by user sauropod.
+* `bash -p` to switch to user sauropod and retrieve the flag
 
 ## Flag
 
